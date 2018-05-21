@@ -1,0 +1,3752 @@
+{
+    "SetParamInt": {
+            "name": "SetParamInt",
+            "code": 1,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "int"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamDouble": {
+            "name": "SetParamDouble",
+            "code": 84,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "double"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamByteTuples": {
+            "name": "SetParamByteTuples",
+            "code": 115,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "tupleDimension", "type": "int"},
+                {"name": "tupleData", "type": "byte_buffer"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetParam": {
+            "name": "GetParam",
+            "code": 79,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "parameterValue", "type": "double"}
+            ]
+    },
+    "GetParamByteTuples": {
+            "name": "GetParamByteTuples",
+            "code": 132,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_wide"}
+            ],
+            "recv": [
+                {"name": "tupleDimension", "type": "int"},
+                {"name": "tupleData", "type": "byte_buffer"}
+            ]
+    },
+    "SetParamOfKind": {
+            "name": "SetParamOfKind",
+            "code": 39,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterKindId", "type": "int"},
+                {"name": "parameterValue", "type": "int"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamOfKindDouble": {
+            "name": "SetParamOfKindDouble",
+            "code": 85,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterKindId", "type": "int"},
+                {"name": "parameterValue", "type": "double"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetParamOfKind": {
+            "name": "GetParamOfKind",
+            "code": 80,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterKindId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "parameterValue", "type": "double"}
+            ]
+    },
+    "SetParamInSelection": {
+            "name": "SetParamInSelection",
+            "code": 58,
+            "send": [
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamInSelectionDouble": {
+            "name": "SetParamInSelectionDouble",
+            "code": 99,
+            "send": [
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "double"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamOfKindInSelection": {
+            "name": "SetParamOfKindInSelection",
+            "code": 59,
+            "send": [
+                {"name": "parameterKindId", "type": "int"},
+                {"name": "parameterValue", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamOfKindInSelectionDouble": {
+            "name": "SetParamOfKindInSelectionDouble",
+            "code": 100,
+            "send": [
+                {"name": "parameterKindId", "type": "int"},
+                {"name": "parameterValue", "type": "double"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamLerpTime": {
+            "name": "SetParamLerpTime",
+            "code": 232,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "smoothingTime", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetIsDeviceSelected": {
+            "name": "GetIsDeviceSelected",
+            "code": 74,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isSelected", "type": "byte"}
+            ]
+    },
+    "GetSelectedDeviceCount": {
+            "name": "GetSelectedDeviceCount",
+            "code": 81,
+            "send": [
+            ],
+            "recv": [
+                {"name": "selectedDevicesCount", "type": "int"}
+            ]
+    },
+    "GetSelectedDevice": {
+            "name": "GetSelectedDevice",
+            "code": 75,
+            "send": [
+                {"name": "selectionIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ]
+    },
+    "SetSequenceMediaAtTime": {
+            "name": "SetSequenceMediaAtTime",
+            "code": 56,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "sequenceId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResource": {
+            "name": "AssignResource",
+            "code": 2,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "forMesh", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResourceByName": {
+            "name": "AssignResourceByName",
+            "code": 129,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "parameterName", "type": "string_wide"},
+                {"name": "forMesh", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResourceToSelection": {
+            "name": "AssignResourceToSelection",
+            "code": 61,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "forMesh", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveResourceToPath": {
+            "name": "MoveResourceToPath",
+            "code": 144,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "projectPath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveTreeItem": {
+            "name": "MoveTreeItem",
+            "code": 158,
+            "send": [
+                {"name": "itemIdFrom", "type": "int"},
+                {"name": "itemIdTo", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceTransportMode": {
+            "name": "SetSequenceTransportMode",
+            "code": 3,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "transportMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetSequenceTransportMode": {
+            "name": "GetSequenceTransportMode",
+            "code": 72,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "transportMode", "type": "int"}
+            ]
+    },
+    "MoveSequenceToTime": {
+            "name": "MoveSequenceToTime",
+            "code": 5,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetSequenceTime": {
+            "name": "GetSequenceTime",
+            "code": 73,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ]
+    },
+    "MoveSequenceToNextFrame": {
+            "name": "MoveSequenceToNextFrame",
+            "code": 6,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "isNext", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveSequenceToCue": {
+            "name": "MoveSequenceToCue",
+            "code": 4,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveSequenceToNextCue": {
+            "name": "MoveSequenceToNextCue",
+            "code": 7,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "isNext", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceTransparency": {
+            "name": "SetSequenceTransparency",
+            "code": 8,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "transparency", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetSequenceTransparency": {
+            "name": "GetSequenceTransparency",
+            "code": 91,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "transparency", "type": "int"}
+            ]
+    },
+    "SetSequenceSMTPETimeCodeMode": {
+            "name": "SetSequenceSMTPETimeCodeMode",
+            "code": 41,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "timeCodeMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceSMTPETimeCodeOffset": {
+            "name": "SetSequenceSMTPETimeCodeOffset",
+            "code": 42,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceSMTPETimeCodeStopAction": {
+            "name": "SetSequenceSMTPETimeCodeStopAction",
+            "code": 43,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "stopAction", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ResetAll": {
+            "name": "ResetAll",
+            "code": 9,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "ResetSite": {
+            "name": "ResetSite",
+            "code": 10,
+            "send": [
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ResetDevice": {
+            "name": "ResetDevice",
+            "code": 11,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ResetParam": {
+            "name": "ResetParam",
+            "code": 12,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetAllActive": {
+            "name": "SetAllActive",
+            "code": 35,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "SetSiteActive": {
+            "name": "SetSiteActive",
+            "code": 36,
+            "send": [
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetDeviceActive": {
+            "name": "SetDeviceActive",
+            "code": 37,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamActive": {
+            "name": "SetParamActive",
+            "code": 38,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearAllActive": {
+            "name": "ClearAllActive",
+            "code": 13,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "ClearActiveSite": {
+            "name": "ClearActiveSite",
+            "code": 14,
+            "send": [
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearActiveDevice": {
+            "name": "ClearActiveDevice",
+            "code": 15,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearActiveParam": {
+            "name": "ClearActiveParam",
+            "code": 16,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ToggleFullscreen": {
+            "name": "ToggleFullscreen",
+            "code": 17,
+            "send": [
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamRelativeDouble": {
+            "name": "SetParamRelativeDouble",
+            "code": 98,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "double"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamRelativeExtended": {
+            "name": "SetParamRelativeExtended",
+            "code": 149,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "double"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamRelativeInSelection": {
+            "name": "SetParamRelativeInSelection",
+            "code": 60,
+            "send": [
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamRelativeInSelectionDouble": {
+            "name": "SetParamRelativeInSelectionDouble",
+            "code": 101,
+            "send": [
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "double"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentToPath": {
+            "name": "AddContentToPath",
+            "code": 87,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "projectPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentToTreeItem": {
+            "name": "AddContentToTreeItem",
+            "code": 153,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromLocalNode": {
+            "name": "AddContentFromLocalNode",
+            "code": 63,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromLocalNodeToPath": {
+            "name": "AddContentFromLocalNodeToPath",
+            "code": 135,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromLocalNodeToTreeItem": {
+            "name": "AddContentFromLocalNodeToTreeItem",
+            "code": 154,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromFolder": {
+            "name": "AddContentFromFolder",
+            "code": 124,
+            "send": [
+                {"name": "folderPath", "type": "string_wide"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "projectPath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromLocalNodeFolder": {
+            "name": "AddContentFromLocalNodeFolder",
+            "code": 133,
+            "send": [
+                {"name": "folderPath", "type": "string_wide"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFromLocalNodeFolderToPath": {
+            "name": "AddContentFromLocalNodeFolderToPath",
+            "code": 134,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContentFolderFromLocalNodeToTreeItem": {
+            "name": "AddContentFolderFromLocalNodeToTreeItem",
+            "code": 155,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveMediaById": {
+            "name": "RemoveMediaById",
+            "code": 20,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveMeshById": {
+            "name": "RemoveMeshById",
+            "code": 21,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveContentByName": {
+            "name": "RemoveContentByName",
+            "code": 125,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "allEquallyNamed", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveTreeItem": {
+            "name": "RemoveTreeItem",
+            "code": 156,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveAllResources": {
+            "name": "RemoveAllResources",
+            "code": 126,
+            "send": [
+                {"name": "removeFolder", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetContentId": {
+            "name": "SetContentId",
+            "code": 234,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "dmxFolderId", "type": "short"},
+                {"name": "dmxFileId", "type": "short"}
+            ],
+            "recv": [
+            ]
+    },
+    "SpreadAll": {
+            "name": "SpreadAll",
+            "code": 22,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "SpreadMediaById": {
+            "name": "SpreadMediaById",
+            "code": 23,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SpreadMeshById": {
+            "name": "SpreadMeshById",
+            "code": 24,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadMediaById": {
+            "name": "ReloadMediaById",
+            "code": 44,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadMeshById": {
+            "name": "ReloadMeshById",
+            "code": 45,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadResource": {
+            "name": "ReloadResource",
+            "code": 147,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "SpreadResource": {
+            "name": "SpreadResource",
+            "code": 148,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadAndSpreadResourceByPath": {
+            "name": "ReloadAndSpreadResourceByPath",
+            "code": 159,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadAndSpreadResourceByTreeItem": {
+            "name": "ReloadAndSpreadResourceByTreeItem",
+            "code": 160,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ReloadAndSpreadResourceByDmxId": {
+            "name": "ReloadAndSpreadResourceByDmxId",
+            "code": 161,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveInconsistent": {
+            "name": "RemoveInconsistent",
+            "code": 34,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveAssetOnSite": {
+            "name": "RemoveAssetOnSite",
+            "code": 170,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveAssetOnSiteById": {
+            "name": "RemoveAssetOnSiteById",
+            "code": 171,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveAssetOnSiteByTreeItem": {
+            "name": "RemoveAssetOnSiteByTreeItem",
+            "code": 172,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AttachAssetOnSite": {
+            "name": "AttachAssetOnSite",
+            "code": 173,
+            "send": [
+                {"name": "filePath", "type": "string_wide"},
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AttachAssetOnSiteByDmxId": {
+            "name": "AttachAssetOnSiteByDmxId",
+            "code": 174,
+            "send": [
+                {"name": "filePath", "type": "string_wide"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AttachAssetOnSiteByTreeItem": {
+            "name": "AttachAssetOnSiteByTreeItem",
+            "code": 175,
+            "send": [
+                {"name": "filePath", "type": "string_wide"},
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "StoreActive": {
+            "name": "StoreActive",
+            "code": 25,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "StoreActiveToTime": {
+            "name": "StoreActiveToTime",
+            "code": 26,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaFrameBlendingById": {
+            "name": "SetMediaFrameBlendingById",
+            "code": 27,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "frameBlended", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaDeinterlacingById": {
+            "name": "SetMediaDeinterlacingById",
+            "code": 28,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "deinterlacer", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaAnisotropicFilteringById": {
+            "name": "SetMediaAnisotropicFilteringById",
+            "code": 29,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "useFiltering", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaUnderscanById": {
+            "name": "SetMediaUnderscanById",
+            "code": 30,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "useUnderscan", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaMpegColourSpaceById": {
+            "name": "SetMediaMpegColourSpaceById",
+            "code": 31,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "useMpegColorSpace", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaAlphaChannelById": {
+            "name": "SetMediaAlphaChannelById",
+            "code": 32,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "useAlphaChannel", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateTextInput": {
+            "name": "CreateTextInput",
+            "code": 52,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetText": {
+            "name": "SetText",
+            "code": 33,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "LoadProject": {
+            "name": "LoadProject",
+            "code": 46,
+            "send": [
+                {"name": "folderPathToProject", "type": "string_narrow"},
+                {"name": "projectXmlFileName", "type": "string_narrow"},
+                {"name": "saveExisting", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "CloseProject": {
+            "name": "CloseProject",
+            "code": 47,
+            "send": [
+                {"name": "save", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearSelection": {
+            "name": "ClearSelection",
+            "code": 48,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "SetDeviceAcceptDmxById": {
+            "name": "SetDeviceAcceptDmxById",
+            "code": 49,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "acceptDmx", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSiteAcceptDmxById": {
+            "name": "SetSiteAcceptDmxById",
+            "code": 50,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "acceptDmx", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetDeviceDmxAddressById": {
+            "name": "SetDeviceDmxAddressById",
+            "code": 51,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "id1", "type": "int"},
+                {"name": "id2", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSiteDmxAddressById": {
+            "name": "SetSiteDmxAddressById",
+            "code": 235,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "id1", "type": "int"},
+                {"name": "id2", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCuePlayMode": {
+            "name": "SetCuePlayMode",
+            "code": 53,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "playMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetNextCuePlayMode": {
+            "name": "SetNextCuePlayMode",
+            "code": 54,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "playMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetIgnoreNextCue": {
+            "name": "SetIgnoreNextCue",
+            "code": 55,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "doIgnore", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SaveProject": {
+            "name": "SaveProject",
+            "code": 62,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "SetIsSiteFullscreen": {
+            "name": "SetIsSiteFullscreen",
+            "code": 64,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "isFullscreen", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetIsSiteFullscreenByIp": {
+            "name": "SetIsSiteFullscreenByIp",
+            "code": 65,
+            "send": [
+                {"name": "ipAddress", "type": "string_narrow"},
+                {"name": "isFullscreen", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextTextureSize": {
+            "name": "SetTextTextureSize",
+            "code": 66,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextProperties": {
+            "name": "SetTextProperties",
+            "code": 67,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "FontFamily", "type": "string_narrow"},
+                {"name": "size", "type": "int"},
+                {"name": "style", "type": "byte"},
+                {"name": "alignment", "type": "byte"},
+                {"name": "colorRed", "type": "byte"},
+                {"name": "colorGreen", "type": "byte"},
+                {"name": "colorBlue", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextCenterOnTexture": {
+            "name": "SetTextCenterOnTexture",
+            "code": 68,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "centerOnTexture", "type": "byte"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateTextInputWide": {
+            "name": "CreateTextInputWide",
+            "code": 69,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextWide": {
+            "name": "SetTextWide",
+            "code": 70,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSiteIpById": {
+            "name": "SetSiteIpById",
+            "code": 71,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "Ip", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetClipRemainingTime": {
+            "name": "GetClipRemainingTime",
+            "code": 77,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ]
+    },
+    "GetRemainingTimeUntilNextCue": {
+            "name": "GetRemainingTimeUntilNextCue",
+            "code": 78,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ]
+    },
+    "GetResourceCount": {
+            "name": "GetResourceCount",
+            "code": 82,
+            "send": [
+            ],
+            "recv": [
+                {"name": "mediaCount", "type": "int"}
+            ]
+    },
+    "GetTreeItemCount": {
+            "name": "GetTreeItemCount",
+            "code": 150,
+            "send": [
+            ],
+            "recv": [
+                {"name": "treeItemCount", "type": "int"}
+            ]
+    },
+    "CreateProjectFolder": {
+            "name": "CreateProjectFolder",
+            "code": 83,
+            "send": [
+                {"name": "folderName", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateProjectFolderInPath": {
+            "name": "CreateProjectFolderInPath",
+            "code": 122,
+            "send": [
+                {"name": "folderName", "type": "string_wide"},
+                {"name": "projectPath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateProjectFolderInTreeItem": {
+            "name": "CreateProjectFolderInTreeItem",
+            "code": 157,
+            "send": [
+                {"name": "folderName", "type": "string_wide"},
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveFolderFromProject": {
+            "name": "RemoveFolderFromProject",
+            "code": 123,
+            "send": [
+                {"name": "projectPath", "type": "string_wide"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetDeviceSelection": {
+            "name": "SetDeviceSelection",
+            "code": 86,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "selectionMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetClxControllerFaderMapping": {
+            "name": "SetClxControllerFaderMapping",
+            "code": 90,
+            "send": [
+                {"name": "faderId", "type": "int"},
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetClxControllerCueMapping": {
+            "name": "SetClxControllerCueMapping",
+            "code": 92,
+            "send": [
+                {"name": "cueBtnId", "type": "int"},
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateCue": {
+            "name": "CreateCue",
+            "code": 93,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"},
+                {"name": "cueName", "type": "string_wide"},
+                {"name": "cueKindId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveCueById": {
+            "name": "RemoveCueById",
+            "code": 94,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemoveAllCues": {
+            "name": "RemoveAllCues",
+            "code": 95,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateVideoLayerGetId": {
+            "name": "CreateVideoLayerGetId",
+            "code": 110,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "isGraphicLayer", "type": "bool"}
+            ],
+            "recv": [
+                {"name": "layerId", "type": "int"}
+            ]
+    },
+    "RemoveLayer": {
+            "name": "RemoveLayer",
+            "code": 97,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "layerId", "type": "int"},
+                {"name": "isGraphicLayer", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetIsBackup": {
+            "name": "SetIsBackup",
+            "code": 102,
+            "send": [
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "ApplyView": {
+            "name": "ApplyView",
+            "code": 103,
+            "send": [
+                {"name": "viewId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSpareFromSpread": {
+            "name": "SetSpareFromSpread",
+            "code": 104,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "spareFromSpread", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetParamResource": {
+            "name": "GetParamResource",
+            "code": 105,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "isMedia", "type": "bool"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"}
+            ]
+    },
+    "GetMediaTransportMode": {
+            "name": "GetMediaTransportMode",
+            "code": 108,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "transportMode", "type": "int"}
+            ]
+    },
+    "GetIsSiteConnected": {
+            "name": "GetIsSiteConnected",
+            "code": 109,
+            "send": [
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isConnected", "type": "bool"}
+            ]
+    },
+    "MoveLayerUp": {
+            "name": "MoveLayerUp",
+            "code": 111,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveLayerDown": {
+            "name": "MoveLayerDown",
+            "code": 112,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveLayerToFirstPosition": {
+            "name": "MoveLayerToFirstPosition",
+            "code": 113,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "MoveLayerToLastPosition": {
+            "name": "MoveLayerToLastPosition",
+            "code": 114,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetEnableClxController": {
+            "name": "SetEnableClxController",
+            "code": 117,
+            "send": [
+                {"name": "forJogShuttle", "type": "byte"},
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetEnableClxController": {
+            "name": "GetEnableClxController",
+            "code": 116,
+            "send": [
+                {"name": "forJogShuttle", "type": "byte"}
+            ],
+            "recv": [
+                {"name": "isEnabled", "type": "bool"}
+            ]
+    },
+    "SetSequenceCueWaitTime": {
+            "name": "SetSequenceCueWaitTime",
+            "code": 118,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceCueJumpTargetTime": {
+            "name": "SetSequenceCueJumpTargetTime",
+            "code": 119,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCueJumpCount": {
+            "name": "SetCueJumpCount",
+            "code": 120,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "jumpCount", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ResetCueTriggerCount": {
+            "name": "ResetCueTriggerCount",
+            "code": 121,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetIsContentConsistent": {
+            "name": "GetIsContentConsistent",
+            "code": 127,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isContentInconsistent", "type": "int"}
+            ]
+    },
+    "GetIsContentConsistentByName": {
+            "name": "GetIsContentConsistentByName",
+            "code": 128,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"}
+            ],
+            "recv": [
+                {"name": "isContentInconsistent", "type": "int"}
+            ]
+    },
+    "CreateSequenceGetId": {
+            "name": "CreateSequenceGetId",
+            "code": 130,
+            "send": [
+            ],
+            "recv": [
+                {"name": "sequenceId", "type": "int"}
+            ]
+    },
+    "RemoveSequence": {
+            "name": "RemoveSequence",
+            "code": 131,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SendMouseInput": {
+            "name": "SendMouseInput",
+            "code": 136,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "mouseEventType", "type": "int"},
+                {"name": "screenPosX", "type": "int"},
+                {"name": "screenPosY", "type": "int"},
+                {"name": "firstPass", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SendMouseScroll": {
+            "name": "SendMouseScroll",
+            "code": 233,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "scrollValue", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SendTouchInput": {
+            "name": "SendTouchInput",
+            "code": 146,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "touchId", "type": "int"},
+                {"name": "touchType", "type": "int"},
+                {"name": "screenPosX", "type": "int"},
+                {"name": "screenPosY", "type": "int"},
+                {"name": "firstPass", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SendKeyboardInput": {
+            "name": "SendKeyboardInput",
+            "code": 137,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "keyboardEventType", "type": "int"},
+                {"name": "keyCode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetShowCursorInFullscreen": {
+            "name": "SetShowCursorInFullscreen",
+            "code": 138,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "showCursor", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetNodeOfSiteIsAudioClockMaster": {
+            "name": "SetNodeOfSiteIsAudioClockMaster",
+            "code": 145,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "isMaster", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddEncryptionKeyGetId": {
+            "name": "AddEncryptionKeyGetId",
+            "code": 164,
+            "send": [
+                {"name": "encryptionKey", "type": "string_wide"}
+            ],
+            "recv": [
+                {"name": "isKeyAdded", "type": "bool"}
+            ]
+    },
+    "AddEncryptionPolicyGetId": {
+            "name": "AddEncryptionPolicyGetId",
+            "code": 165,
+            "send": [
+                {"name": "encryptionPolicy", "type": "string_wide"}
+            ],
+            "recv": [
+                {"name": "isKeyAdded", "type": "bool"}
+            ]
+    },
+    "SetRouteInputToLayer": {
+            "name": "SetRouteInputToLayer",
+            "code": 166,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "enableInputRouting", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetRouteInputToAutomation": {
+            "name": "SetRouteInputToAutomation",
+            "code": 167,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "enableInputAutomation", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetEnableOutputForPicking": {
+            "name": "SetEnableOutputForPicking",
+            "code": 168,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "outputId", "type": "int"},
+                {"name": "enableInputPicking", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetASIOMasterVolume": {
+            "name": "SetASIOMasterVolume",
+            "code": 169,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "asioVolume", "type": "double"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetThumbnailByPath": {
+            "name": "GetThumbnailByPath",
+            "code": 162,
+            "send": [
+                {"name": "resourcePath", "type": "string_wide"}
+            ],
+            "recv": [
+                {"name": "thumbnailWidth", "type": "int"},
+                {"name": "thumbnailHeight", "type": "int"},
+                {"name": "thumbnailData", "type": "byte_buffer"}
+            ]
+    },
+    "GetThumbnailByItemIndex": {
+            "name": "GetThumbnailByItemIndex",
+            "code": 163,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "thumbnailWidth", "type": "int"},
+                {"name": "thumbnailHeight", "type": "int"},
+                {"name": "thumbnailData", "type": "byte_buffer"}
+            ]
+    },
+    "CreatePlaylist": {
+            "name": "CreatePlaylist",
+            "code": 176,
+            "send": [
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInPath": {
+            "name": "CreatePlaylistInPath",
+            "code": 177,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInItemId": {
+            "name": "CreatePlaylistInItemId",
+            "code": 178,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInPathFromFolder": {
+            "name": "CreatePlaylistInPathFromFolder",
+            "code": 179,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "sourceProjectPath", "type": "string_narrow"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInTreeItemFromFolder": {
+            "name": "CreatePlaylistInTreeItemFromFolder",
+            "code": 180,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "sourceFolderItemId", "type": "int"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "PushBackPlaylistEntryByDmxId": {
+            "name": "PushBackPlaylistEntryByDmxId",
+            "code": 181,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "resourceDmxFolderId", "type": "int"},
+                {"name": "resourceDmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "PushBackPlaylistEntryByPath": {
+            "name": "PushBackPlaylistEntryByPath",
+            "code": 182,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "PushBackPlaylistEntryByItemId": {
+            "name": "PushBackPlaylistEntryByItemId",
+            "code": 183,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "resourceItemId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryByDmxId": {
+            "name": "InsertPlaylistEntryByDmxId",
+            "code": 184,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "resourceDmxFolderId", "type": "int"},
+                {"name": "resourceDmxFileId", "type": "int"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryByPath": {
+            "name": "InsertPlaylistEntryByPath",
+            "code": 185,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryByItemId": {
+            "name": "InsertPlaylistEntryByItemId",
+            "code": 186,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "resourceItemId", "type": "int"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemovePlaylistEntryByDmxId": {
+            "name": "RemovePlaylistEntryByDmxId",
+            "code": 187,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemovePlaylistEntryByPath": {
+            "name": "RemovePlaylistEntryByPath",
+            "code": 188,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RemovePlaylistEntryByItemId": {
+            "name": "RemovePlaylistEntryByItemId",
+            "code": 189,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetPlaylistSizeByDmxId": {
+            "name": "GetPlaylistSizeByDmxId",
+            "code": 190,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "playlistSize", "type": "int"}
+            ]
+    },
+    "GetPlaylistSizeByPath": {
+            "name": "GetPlaylistSizeByPath",
+            "code": 191,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "playlistSize", "type": "int"}
+            ]
+    },
+    "GetPlaylistSizeByItemId": {
+            "name": "GetPlaylistSizeByItemId",
+            "code": 192,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "playlistSize", "type": "int"}
+            ]
+    },
+    "SetPlaylistEntryIndexByDmxId": {
+            "name": "SetPlaylistEntryIndexByDmxId",
+            "code": 199,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "newIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryIndexByPath": {
+            "name": "SetPlaylistEntryIndexByPath",
+            "code": 200,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "newIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryIndexByItemId": {
+            "name": "SetPlaylistEntryIndexByItemId",
+            "code": 201,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "newIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryDurationByDmxId": {
+            "name": "SetPlaylistEntryDurationByDmxId",
+            "code": 202,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryDurationByPath": {
+            "name": "SetPlaylistEntryDurationByPath",
+            "code": 203,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryDurationByItemId": {
+            "name": "SetPlaylistEntryDurationByItemId",
+            "code": 204,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryFadeOutTimeByDmxId": {
+            "name": "SetPlaylistEntryFadeOutTimeByDmxId",
+            "code": 205,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryFadeOutTimeByPath": {
+            "name": "SetPlaylistEntryFadeOutTimeByPath",
+            "code": 206,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryFadeOutTimeByItemId": {
+            "name": "SetPlaylistEntryFadeOutTimeByItemId",
+            "code": 207,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryInPointByDmxId": {
+            "name": "SetPlaylistEntryInPointByDmxId",
+            "code": 208,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryInPointByPath": {
+            "name": "SetPlaylistEntryInPointByPath",
+            "code": 210,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryInPointByItemId": {
+            "name": "SetPlaylistEntryInPointByItemId",
+            "code": 211,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryOutPointByDmxId": {
+            "name": "SetPlaylistEntryOutPointByDmxId",
+            "code": 212,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryOutPointByPath": {
+            "name": "SetPlaylistEntryOutPointByPath",
+            "code": 213,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryOutPointByItemId": {
+            "name": "SetPlaylistEntryOutPointByItemId",
+            "code": 214,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryTransitionByDmxId": {
+            "name": "SetPlaylistEntryTransitionByDmxId",
+            "code": 215,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryTransitionByPath": {
+            "name": "SetPlaylistEntryTransitionByPath",
+            "code": 216,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryTransitionByItemId": {
+            "name": "SetPlaylistEntryTransitionByItemId",
+            "code": 217,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryNoteByDmxId": {
+            "name": "SetPlaylistEntryNoteByDmxId",
+            "code": 218,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "pNote", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryNoteByPath": {
+            "name": "SetPlaylistEntryNoteByPath",
+            "code": 219,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "pNote", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetPlaylistEntryNoteByItemId": {
+            "name": "SetPlaylistEntryNoteByItemId",
+            "code": 220,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "pNote", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "RecordLiveInputByDmxId": {
+            "name": "RecordLiveInputByDmxId",
+            "code": 222,
+            "send": [
+                {"name": "folderID", "type": "int"},
+                {"name": "fileID", "type": "int"},
+                {"name": "pFilename", "type": "string_narrow"},
+                {"name": "encodingPresetName", "type": "string_narrow"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RecordLiveInputStartByDmxId": {
+            "name": "RecordLiveInputStartByDmxId",
+            "code": 223,
+            "send": [
+                {"name": "folderID", "type": "int"},
+                {"name": "fileID", "type": "int"},
+                {"name": "pFilename", "type": "string_narrow"},
+                {"name": "encodingPresetName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "RecordLiveInputByName": {
+            "name": "RecordLiveInputByName",
+            "code": 225,
+            "send": [
+                {"name": "liveInputResourcePath", "type": "string_narrow"},
+                {"name": "pFilename", "type": "string_narrow"},
+                {"name": "encodingPresetName", "type": "string_narrow"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RecordLiveInputStartByName": {
+            "name": "RecordLiveInputStartByName",
+            "code": 226,
+            "send": [
+                {"name": "liveInputResourcePath", "type": "string_narrow"},
+                {"name": "pFilename", "type": "string_narrow"},
+                {"name": "encodingPresetName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ExportVideo": {
+            "name": "ExportVideo",
+            "code": 227,
+            "send": [
+                {"name": "pFilename", "type": "string_narrow"},
+                {"name": "encodingPresetName", "type": "string_narrow"},
+                {"name": "sequenceId", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "EncodeFileByName": {
+            "name": "EncodeFileByName",
+            "code": 228,
+            "send": [
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "encodingPreset", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "EncodeFileByDmxId": {
+            "name": "EncodeFileByDmxId",
+            "code": 230,
+            "send": [
+                {"name": "folderID", "type": "int"},
+                {"name": "fileID", "type": "int"},
+                {"name": "encodingPreset", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "EncodeFileToPath": {
+            "name": "EncodeFileToPath",
+            "code": 229,
+            "send": [
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "overwriteExisting", "type": "bool"},
+                {"name": "encodingPreset", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "EncodeFileByDmxId": {
+            "name": "EncodeFileByDmxId",
+            "code": 231,
+            "send": [
+                {"name": "folderID", "type": "int"},
+                {"name": "fileID", "type": "int"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "overwriteExisting", "type": "bool"},
+                {"name": "encodingPreset", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasResolutionByDmxId": {
+            "name": "SetCanvasResolutionByDmxId",
+            "code": 239,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasResolutionByPath": {
+            "name": "SetCanvasResolutionByPath",
+            "code": 240,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasResolutionByItemId": {
+            "name": "SetCanvasResolutionByItemId",
+            "code": 241,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearCanvasByDmxId": {
+            "name": "ClearCanvasByDmxId",
+            "code": 242,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearCanvasByPath": {
+            "name": "ClearCanvasByPath",
+            "code": 243,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearCanvasByItemId": {
+            "name": "ClearCanvasByItemId",
+            "code": 244,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ExecuteCanvasCmdByDmxId": {
+            "name": "ExecuteCanvasCmdByDmxId",
+            "code": 245,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"},
+                {"name": "cmd", "type": "string_narrow"},
+                {"name": "cmdContainsResourcePath", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "ExecuteCanvasCmdByPath": {
+            "name": "ExecuteCanvasCmdByPath",
+            "code": 246,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "cmd", "type": "string_narrow"},
+                {"name": "cmdContainsResourcePath", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "ExecuteCanvasCmdByItemId": {
+            "name": "ExecuteCanvasCmdByItemId",
+            "code": 247,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"},
+                {"name": "cmd", "type": "string_narrow"},
+                {"name": "cmdContainsResourcePath", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetCanvasDrawCommandsByDmxId": {
+            "name": "GetCanvasDrawCommandsByDmxId",
+            "code": 248,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "commands", "type": "string_narrow"}
+            ]
+    },
+    "GetCanvasDrawCommandsByPath": {
+            "name": "GetCanvasDrawCommandsByPath",
+            "code": 249,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "commands", "type": "string_narrow"}
+            ]
+    },
+    "GetCanvasDrawCommandsByItemId": {
+            "name": "GetCanvasDrawCommandsByItemId",
+            "code": 250,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "commands", "type": "string_narrow"}
+            ]
+    },
+    "GetMediaWidthByDmxId": {
+            "name": "GetMediaWidthByDmxId",
+            "code": 251,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "width", "type": "int"}
+            ]
+    },
+    "GetMediaWidthByPath": {
+            "name": "GetMediaWidthByPath",
+            "code": 252,
+            "send": [
+                {"name": "folderPathToProject", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "width", "type": "int"}
+            ]
+    },
+    "GetMediaWidthByItemId": {
+            "name": "GetMediaWidthByItemId",
+            "code": 253,
+            "send": [
+                {"name": "itemId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "width", "type": "int"}
+            ]
+    },
+    "GetMediaHeightByDmxId": {
+            "name": "GetMediaHeightByDmxId",
+            "code": 254,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "height", "type": "int"}
+            ]
+    },
+    "GetMediaHeightByPath": {
+            "name": "GetMediaHeightByPath",
+            "code": 255,
+            "send": [
+                {"name": "folderPathToProject", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "height", "type": "int"}
+            ]
+    },
+    "GetMediaHeightByItemId": {
+            "name": "GetMediaHeightByItemId",
+            "code": 256,
+            "send": [
+                {"name": "itemId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "height", "type": "int"}
+            ]
+    },
+    "GetProjectPathOnDisc": {
+            "name": "GetProjectPathOnDisc",
+            "code": 257,
+            "send": [
+            ],
+            "recv": [
+                {"name": "commands", "type": "string_narrow"}
+            ]
+    },
+    "SaveProjectAs": {
+            "name": "SaveProjectAs",
+            "code": 258,
+            "send": [
+                {"name": "folderPathToProject", "type": "string_narrow"},
+                {"name": "projectXmlFileName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SaveProjectCopy": {
+            "name": "SaveProjectCopy",
+            "code": 259,
+            "send": [
+                {"name": "folderPathToProject", "type": "string_narrow"},
+                {"name": "projectXmlFileName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "BundleProject": {
+            "name": "BundleProject",
+            "code": 260,
+            "send": [
+                {"name": "bundlePath", "type": "string_narrow"},
+                {"name": "bundleName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetResourceNameByPath": {
+            "name": "SetResourceNameByPath",
+            "code": 261,
+            "send": [
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetResourceNameByItemIndex": {
+            "name": "SetResourceNameByItemIndex",
+            "code": 263,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetResourceNameByDmxId": {
+            "name": "SetResourceNameByDmxId",
+            "code": 262,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SendCanvasCmdsToStackByDmxId": {
+            "name": "SendCanvasCmdsToStackByDmxId",
+            "code": 265,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"},
+                {"name": "doAddToStack", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetAddCanvasCmdsToStackByPath": {
+            "name": "SetAddCanvasCmdsToStackByPath",
+            "code": 266,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "doAddToStack", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetAddCanvasCmdsToStackByItemId": {
+            "name": "SetAddCanvasCmdsToStackByItemId",
+            "code": 267,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"},
+                {"name": "doAddToStack", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearEmptyPlaylistEntriesByDmxId": {
+            "name": "ClearEmptyPlaylistEntriesByDmxId",
+            "code": 268,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearEmptyPlaylistEntriesByPath": {
+            "name": "ClearEmptyPlaylistEntriesByPath",
+            "code": 269,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearEmptyPlaylistEntriesByItemId": {
+            "name": "ClearEmptyPlaylistEntriesByItemId",
+            "code": 270,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearAllPlaylistEntriesByDmxId": {
+            "name": "ClearAllPlaylistEntriesByDmxId",
+            "code": 271,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearAllPlaylistEntriesByPath": {
+            "name": "ClearAllPlaylistEntriesByPath",
+            "code": 272,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearAllPlaylistEntriesByItemIndex": {
+            "name": "ClearAllPlaylistEntriesByItemIndex",
+            "code": 273,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSublayerParamOfKindDouble": {
+            "name": "SetSublayerParamOfKindDouble",
+            "code": 274,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "sublayerId", "type": "int"},
+                {"name": "parameterKindId", "type": "int"},
+                {"name": "parameterValue", "type": "double"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "HandleSublayer": {
+            "name": "HandleSublayer",
+            "code": 275,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "action", "type": "int"},
+                {"name": "data", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCueName": {
+            "name": "SetCueName",
+            "code": 276,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"},
+                {"name": "cueName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetCueName": {
+            "name": "GetCueName",
+            "code": 277,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "cueId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "cueName", "type": "string_narrow"}
+            ]
+    },
+    "StoreActiveSite": {
+            "name": "StoreActiveSite",
+            "code": 278,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "StoreActiveDevice": {
+            "name": "StoreActiveDevice",
+            "code": 279,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "StoreActiveParam": {
+            "name": "StoreActiveParam",
+            "code": 280,
+            "send": [
+                {"name": "sequenceId", "type": "int"},
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignDeviceByName": {
+            "name": "AssignDeviceByName",
+            "code": 282,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "sourceDeviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResourceToParam": {
+            "name": "AssignResourceToParam",
+            "code": 283,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "forMesh", "type": "bool"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequence": {
+            "name": "AddImageSequence",
+            "code": 284,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "fps", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceToFolder": {
+            "name": "AddImageSequenceToFolder",
+            "code": 285,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "fps", "type": "int"},
+                {"name": "projectPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceToTreeItem": {
+            "name": "AddImageSequenceToTreeItem",
+            "code": 286,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "fps", "type": "int"},
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNode": {
+            "name": "AddImageSequenceFromLocalNode",
+            "code": 287,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNodeId": {
+            "name": "AddImageSequenceFromLocalNodeId",
+            "code": 288,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNodeToFolder": {
+            "name": "AddImageSequenceFromLocalNodeToFolder",
+            "code": 289,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"},
+                {"name": "projectPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNodeToFolderId": {
+            "name": "AddImageSequenceFromLocalNodeToFolderId",
+            "code": 290,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "projectPath", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNodeToTreeItem": {
+            "name": "AddImageSequenceFromLocalNodeToTreeItem",
+            "code": 291,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"},
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddImageSequenceFromLocalNodeToTreeItemId": {
+            "name": "AddImageSequenceFromLocalNodeToTreeItemId",
+            "code": 292,
+            "send": [
+                {"name": "folderPath", "type": "string_narrow"},
+                {"name": "fps", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextFormatted": {
+            "name": "SetTextFormatted",
+            "code": 293,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_narrow"},
+                {"name": "isFormatted", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetTextFormattedWide": {
+            "name": "SetTextFormattedWide",
+            "code": 294,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "text", "type": "string_wide"},
+                {"name": "isFormatted", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetCurrentTimeCueInfo": {
+            "name": "GetCurrentTimeCueInfo",
+            "code": 295,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"},
+                {"name": "previousCueId", "type": "int"},
+                {"name": "previousCueName", "type": "string_narrow"},
+                {"name": "hoursPreviousCue", "type": "int"},
+                {"name": "minutesPreviousCue", "type": "int"},
+                {"name": "secondsPreviousCue", "type": "int"},
+                {"name": "framesPreviousCue", "type": "int"},
+                {"name": "previousCueMode", "type": "int"},
+                {"name": "nextCueId", "type": "int"},
+                {"name": "nextCueName", "type": "string_narrow"},
+                {"name": "hoursNextCue", "type": "int"},
+                {"name": "minutesNextCue", "type": "int"},
+                {"name": "secondsNextCue", "type": "int"},
+                {"name": "framesNextCue", "type": "int"},
+                {"name": "nextCueMode", "type": "int"}
+            ]
+    },
+    "GetContentIsConsistentByTreeItem": {
+            "name": "GetContentIsConsistentByTreeItem",
+            "code": 296,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SpreadToSite": {
+            "name": "SpreadToSite",
+            "code": 297,
+            "send": [
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetGroupSelection": {
+            "name": "SetGroupSelection",
+            "code": 298,
+            "send": [
+                {"name": "groupIndex", "type": "int"},
+                {"name": "selectionMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSequenceSelection": {
+            "name": "SetSequenceSelection",
+            "code": 299,
+            "send": [
+                {"name": "sequenceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistWithName": {
+            "name": "CreatePlaylistWithName",
+            "code": 300,
+            "send": [
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInPathWithName": {
+            "name": "CreatePlaylistInPathWithName",
+            "code": 301,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInItemIdWithName": {
+            "name": "CreatePlaylistInItemIdWithName",
+            "code": 302,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInPathFromFolderWithName": {
+            "name": "CreatePlaylistInPathFromFolderWithName",
+            "code": 303,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "sourceProjectPath", "type": "string_narrow"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreatePlaylistInTreeItemFromFolderWithName": {
+            "name": "CreatePlaylistInTreeItemFromFolderWithName",
+            "code": 304,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "sourceFolderItemId", "type": "int"},
+                {"name": "setdmxFileIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"},
+                {"name": "newResourceName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetWatchedFolderProperty": {
+            "name": "SetWatchedFolderProperty",
+            "code": 305,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "watchFolderProperty", "type": "int"},
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetWatchedFolderPropertyByItemId": {
+            "name": "SetWatchedFolderPropertyByItemId",
+            "code": 306,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "watchFolderProperty", "type": "int"},
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetFolderSpreadToSite": {
+            "name": "SetFolderSpreadToSite",
+            "code": 307,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetFolderSpreadToSiteByItemId": {
+            "name": "SetFolderSpreadToSiteByItemId",
+            "code": 308,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "siteId", "type": "int"},
+                {"name": "enable", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "ClearStreamingText": {
+            "name": "ClearStreamingText",
+            "code": 309,
+            "send": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "pendingOnly", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetWatchedFolderProperty": {
+            "name": "GetWatchedFolderProperty",
+            "code": 310,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "watchFolderProperty", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isEnabled", "type": "bool"}
+            ]
+    },
+    "GetWatchedFolderPropertyByItemId": {
+            "name": "GetWatchedFolderPropertyByItemId",
+            "code": 311,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "watchFolderProperty", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isEnabled", "type": "bool"}
+            ]
+    },
+    "GetFolderSpreadToSite": {
+            "name": "GetFolderSpreadToSite",
+            "code": 312,
+            "send": [
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isEnabled", "type": "bool"}
+            ]
+    },
+    "GetFolderSpreadToSiteByItemId": {
+            "name": "GetFolderSpreadToSiteByItemId",
+            "code": 313,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "siteId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "isEnabled", "type": "bool"}
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByDmxId": {
+            "name": "InsertPlaylistEntryWithParametersByDmxId",
+            "code": 314,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByPath": {
+            "name": "InsertPlaylistEntryWithParametersByPath",
+            "code": 315,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByTreeItem": {
+            "name": "InsertPlaylistEntryWithParametersByTreeItem",
+            "code": 316,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "SetParamRelative": {
+            "name": "SetParamRelative",
+            "code": 18,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"},
+                {"name": "parameterValue", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AddContent": {
+            "name": "AddContent",
+            "code": 19,
+            "send": [
+                {"name": "filePath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "autoIncrementDmxId", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetMediaInfo": {
+            "name": "GetMediaInfo",
+            "code": 76,
+            "send": [
+                {"name": "treeItemsMediaIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "resourceName", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"},
+                {"name": "fps", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"},
+                {"name": "options", "type": "int"}
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByDmxId": {
+            "name": "InsertPlaylistEntryWithParametersByDmxId",
+            "code": 314,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "resourceDmxFolderId", "type": "int"},
+                {"name": "resourceDmxFileId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByPath": {
+            "name": "InsertPlaylistEntryWithParametersByPath",
+            "code": 315,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "index", "type": "int"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "InsertPlaylistEntryWithParametersByTreeItem": {
+            "name": "InsertPlaylistEntryWithParametersByTreeItem",
+            "code": 316,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "resourceItemId", "type": "int"},
+                {"name": "index", "type": "int"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetYawPitchRoll": {
+            "name": "SetYawPitchRoll",
+            "code": 323,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "inRadians", "type": "bool"},
+                {"name": "yaw", "type": "double"},
+                {"name": "pitch", "type": "double"},
+                {"name": "roll", "type": "double"},
+                {"name": "doSilent", "type": "bool"},
+                {"name": "doDirect", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetYawPitchRoll": {
+            "name": "GetYawPitchRoll",
+            "code": 324,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "inRadians", "type": "bool"}
+            ],
+            "recv": [
+                {"name": "yaw", "type": "double"},
+                {"name": "pitch", "type": "double"},
+                {"name": "roll", "type": "double"}
+            ]
+    },
+    "GetSiteIds": {
+            "name": "GetSiteIds",
+            "code": 317,
+            "send": [
+            ],
+            "recv": [
+                {"name": "siteIds", "type": "int_buffer"}
+            ]
+    },
+    "SetCompositingPassRenderTargetSize": {
+            "name": "SetCompositingPassRenderTargetSize",
+            "code": 341,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetSoftedgeIsWarped": {
+            "name": "SetSoftedgeIsWarped",
+            "code": 342,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "isWarped", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasTextureFormatByDmxId": {
+            "name": "SetCanvasTextureFormatByDmxId",
+            "code": 338,
+            "send": [
+                {"name": "canvasDmxFolderId", "type": "int"},
+                {"name": "canvasDmxFileId", "type": "int"},
+                {"name": "textureFormat", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasTextureFormatByPath": {
+            "name": "SetCanvasTextureFormatByPath",
+            "code": 339,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "textureFormat", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetCanvasTextureFormatByItemId": {
+            "name": "SetCanvasTextureFormatByItemId",
+            "code": 340,
+            "send": [
+                {"name": "canvasItemIndex", "type": "int"},
+                {"name": "textureFormat", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "ResetSockets": {
+            "name": "ResetSockets",
+            "code": 354,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "ResetSerialLink": {
+            "name": "ResetSerialLink",
+            "code": 355,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResourceToParamBlocked": {
+            "name": "AssignResourceToParamBlocked",
+            "code": 352,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "forMesh", "type": "bool"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignResourceBlocked": {
+            "name": "AssignResourceBlocked",
+            "code": 353,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "forMesh", "type": "bool"}
+            ],
+            "recv": [
+            ]
+    },
+    "JumpToPlayListEntryByDmxId": {
+            "name": "JumpToPlayListEntryByDmxId",
+            "code": 356,
+            "send": [
+                {"name": "forward", "type": "bool"},
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "JumpToPlayListEntryByPath": {
+            "name": "JumpToPlayListEntryByPath",
+            "code": 357,
+            "send": [
+                {"name": "forward", "type": "bool"},
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "JumpToPlayListEntryByItemId": {
+            "name": "JumpToPlayListEntryByItemId",
+            "code": 358,
+            "send": [
+                {"name": "forward", "type": "bool"},
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "parameterName", "type": "string_narrow"}
+            ],
+            "recv": [
+            ]
+    },
+    "SetMediaTransportMode": {
+            "name": "SetMediaTransportMode",
+            "code": 359,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "transportMode", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "AssignDevice": {
+            "name": "AssignDevice",
+            "code": 281,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "deviceId", "type": "int"},
+                {"name": "sourceDeviceId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateCanvas": {
+            "name": "CreateCanvas",
+            "code": 236,
+            "send": [
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateCanvasByPath": {
+            "name": "CreateCanvasByPath",
+            "code": 237,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "CreateCanvasByItemId": {
+            "name": "CreateCanvasByItemId",
+            "code": 238,
+            "send": [
+                {"name": "folderItemIndex", "type": "int"},
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "RecordLiveInputStop": {
+            "name": "RecordLiveInputStop",
+            "code": 224,
+            "send": [
+            ],
+            "recv": [
+            ]
+    },
+    "CreateCanvasByPathFromTemplate": {
+            "name": "CreateCanvasByPathFromTemplate",
+            "code": 264,
+            "send": [
+                {"name": "canvasResourcePath", "type": "string_narrow"},
+                {"name": "newResourceName", "type": "string_narrow"},
+                {"name": "cmd", "type": "string_narrow"},
+                {"name": "setDims", "type": "bool"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"},
+                {"name": "doSetDmxIds", "type": "bool"},
+                {"name": "newDmxFolderId", "type": "int"},
+                {"name": "newdmxFileId", "type": "int"}
+            ],
+            "recv": [
+            ]
+    },
+    "GetHostRevisionNumber": {
+            "name": "GetHostRevisionNumber",
+            "code": 334,
+            "send": [
+            ],
+            "recv": [
+                {"name": "revision", "type": "int"}
+            ]
+    },
+    "GetTreeItemInfo": {
+            "name": "GetTreeItemInfo",
+            "code": 151,
+            "send": [
+                {"name": "treeItemIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "resourceType", "type": "int"},
+                {"name": "resourcePath", "type": "string_wide"},
+                {"name": "folderPath", "type": "string_wide"}
+            ]
+    },
+    "GetMediaInfoByTreeItemIndex": {
+            "name": "GetMediaInfoByTreeItemIndex",
+            "code": 152,
+            "send": [
+                {"name": "index", "type": "int"}
+            ],
+            "recv": [
+                {"name": "dmxFolderId", "type": "int"},
+                {"name": "dmxFileId", "type": "int"},
+                {"name": "resourceName", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "projectPath", "type": "string_narrow"},
+                {"name": "width", "type": "int"},
+                {"name": "height", "type": "int"},
+                {"name": "fps", "type": "int"},
+                {"name": "hours", "type": "int"},
+                {"name": "minutes", "type": "int"},
+                {"name": "seconds", "type": "int"},
+                {"name": "frames", "type": "int"},
+                {"name": "options", "type": "int"}
+            ]
+    },
+    "GetPlaylistEntryByDmxId": {
+            "name": "GetPlaylistEntryByDmxId",
+            "code": 193,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"},
+                {"name": "playlistEntryIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "resourceName", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ]
+    },
+    "GetPlaylistEntryByPath": {
+            "name": "GetPlaylistEntryByPath",
+            "code": 194,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"},
+                {"name": "playlistEntryIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "resourceName", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ]
+    },
+    "GetPlaylistEntryByItemId": {
+            "name": "GetPlaylistEntryByItemId",
+            "code": 195,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"},
+                {"name": "playlistEntryIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "treeItemIndex", "type": "int"},
+                {"name": "resourceName", "type": "string_narrow"},
+                {"name": "resourcePath", "type": "string_narrow"},
+                {"name": "durationHours", "type": "int"},
+                {"name": "durationMinutes", "type": "int"},
+                {"name": "durationSeconds", "type": "int"},
+                {"name": "durationFrames", "type": "int"},
+                {"name": "fadeOutHour", "type": "int"},
+                {"name": "fadeOutMinute", "type": "int"},
+                {"name": "fadeOutSecond", "type": "int"},
+                {"name": "fadeOutFrame", "type": "int"},
+                {"name": "startHour", "type": "int"},
+                {"name": "startMinute", "type": "int"},
+                {"name": "startSecond", "type": "int"},
+                {"name": "startFrame", "type": "int"},
+                {"name": "endHour", "type": "int"},
+                {"name": "endMinute", "type": "int"},
+                {"name": "endSecond", "type": "int"},
+                {"name": "endFrame", "type": "int"},
+                {"name": "fadeFxId", "type": "int"}
+            ]
+    },
+    "GetPlaylistEntryIndicesByDmxId": {
+            "name": "GetPlaylistEntryIndicesByDmxId",
+            "code": 196,
+            "send": [
+                {"name": "playlistDmxFolderId", "type": "int"},
+                {"name": "playlistdmxFileId", "type": "int"}
+            ],
+            "recv": [
+                {"name": "treeItemIds", "type": "int_buffer"}
+            ]
+    },
+    "GetPlaylistEntryIndicesByPath": {
+            "name": "GetPlaylistEntryIndicesByPath",
+            "code": 197,
+            "send": [
+                {"name": "playlistPath", "type": "string_narrow"}
+            ],
+            "recv": [
+                {"name": "treeItemIds", "type": "int_buffer"}
+            ]
+    },
+    "GetPlaylistEntryIndicesByItemId": {
+            "name": "GetPlaylistEntryIndicesByItemId",
+            "code": 198,
+            "send": [
+                {"name": "playlistItemIndex", "type": "int"}
+            ],
+            "recv": [
+                {"name": "treeItemIds", "type": "int_buffer"}
+            ]
+    },
+    "CreateGraphicLayerGetId": {
+            "name": "CreateGraphicLayerGetId",
+            "code": 96,
+            "send": [
+                {"name": "siteId", "type": "int"},
+                {"name": "isGraphicLayer", "type": "bool"}
+            ],
+            "recv": [
+                {"name": "layerId", "type": "int"}
+            ]
+    }
+}

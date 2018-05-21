@@ -1,0 +1,10 @@
+{
+  "name": "pbauto-nodejs",
+  "version": "0.0.1",
+  "repository": "git@github.com:revl-ca/pbauto-nodejs.git",
+  "author": "<steve@revl.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "hexy": "^0.2.11"
+  }
+}

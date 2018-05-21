@@ -1,0 +1,14 @@
+{
+    {%- for enum in enums %}
+    "{{ enum.name }}": {
+        "reversemap": {
+            {%- for value in enum['values'] %}
+            "v{{ value.val }}":"{{ value.key }}"{{ ',' if not loop.last }}
+            {%- endfor %}
+        },
+        {%- for value in enum['values'] %}
+        "{{ value.key }}":{{ value.val }}{{ ',' if not loop.last }}
+        {%- endfor %}
+    }{{ ',' if not loop.last }}
+    {%- endfor %}
+}
