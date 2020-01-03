@@ -121,11 +121,12 @@ const validateReply = (replyBuffer, expectedCommand) => {
 
 }
 
-/*const encodeParams = (params = []) => {
-  return params
-    .map(({ type, value }) => encodeParam(type, value))
-    .reduce((a, b) => Buffer.concat([a, b]))
-}*/
+const encodeParams = (params = []) => params
+  .map(param => {
+    const { type, value } = param
+    
+    return Buffer.isBuffer(param) ? param : encodeParam(type, value)
+  })
 
 const encodeParam = (type, value) => {
   switch (type) {
@@ -145,10 +146,8 @@ const encodeParam = (type, value) => {
   }
 }
 
-const decodeParams = (params = []) => {
-  return params
-    .map(({ type, value }) => decodeParam(type, value))
-}
+const decodeParams = (params = []) => params
+  .map(({ type, value }) => decodeParam(type, value))
 
 const decodeParam = (type, value) => {
   switch (type) {
