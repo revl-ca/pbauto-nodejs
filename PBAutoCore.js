@@ -121,12 +121,23 @@ const validateReply = (replyBuffer, expectedCommand) => {
 
 }
 
-const encodeParams = (params = []) => params
-  .map(param => {
-    const { type, value } = param
-    
-    return Buffer.isBuffer(param) ? param : encodeParam(type, value)
-  })
+const encodeParams = (params = []) => {
+  /*const [{ type: first }] = params
+
+  if (first !== 'short')
+    throw new Exception(`First value must be of type "short" but type "${type}" found.`)*/
+
+  const body = params
+    .map(param => {
+      const { type, value } = param
+
+      return Buffer.isBuffer(param) ? param : encodeParam(type, value)
+    })
+
+  const header = packet_header(config.pbDomain, Buffer.concat(body).length)
+  
+  return Buffer.concat([ header, ...body ])
+}
 
 const encodeParam = (type, value) => {
   switch (type) {
